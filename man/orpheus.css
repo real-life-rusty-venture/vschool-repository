@@ -1,0 +1,9 @@
+html {
+    background-color: pink;
+    color: blueviolet;
+}
+#square {
+    width: 150px;
+    height: 150px;
+    background-color: darkorchid;
+}
