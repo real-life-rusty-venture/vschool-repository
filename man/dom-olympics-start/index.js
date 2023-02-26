@@ -23,11 +23,18 @@ clearButton.addEventListener("click", function(){
 var send = document.getElementById("send")
 send.addEventListener("click", function(){
     event.preventDefault()
+     var messages = document.getElementsByClassName("message")
+     console.log(messages)
     var knife = document.createElement("div")
     var input = document.getElementById("input")
     knife.textContent = input.value
     knife.classList.add("message")
-    knife.classList.add("left")
+    if (messages[messages.length-1].classList.contains("right")){
+        knife.classList.add("left")
+    }
+    else {
+        knife.classList.add("right")
+    }
      //var messages = document.getElementsByClassName("messages")
      //messages.push("still beating heart beating out kill me kill me in morse code")
      var equate = document.getElementById("messages")
