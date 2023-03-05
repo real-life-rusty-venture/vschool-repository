@@ -1,0 +1,33 @@
+#fuck-cunt {
+    display: flex;
+    border: 10px solid #99A66A;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px 100px;
+}
+#fuck-cunt >div:nth-child(1){
+    background-color: #012623;
+    height: 30px;
+    margin: 50px;
+}
+#fuck-cunt > div:nth-child(2) {
+    background-color: yellowgreen;
+    height: 30px;
+    margin: 50px;
+}
+#fuck-cunt >div:nth-child(3) {
+    background-color: #BF0404;
+    height: 30px;
+    margin: 50px;
+}
+#fuck-cunt >div:nth-child(4) {
+    background-color: #730202;
+    height: 30px;
+    margin: 50px;
+}
+#fuck-cunt  >div:nth-child(5) {
+    background-color: #260101;
+    height: 30px;
+    margin: 50px;
+}

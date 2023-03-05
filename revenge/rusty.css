@@ -28,19 +28,36 @@
     width: 400px;
     position: fixed;
 }
-#hot-cock{
-    position: fixed;
-    text-align: center;
+@media  only screen and (min-width: 400px) {
+    #hot-cock{
+        position: fixed;
+        text-align: center;
+        bottom: 600px
+    }
+    .hot {
+        position: relative;
+        border: 4px dashed greenyellow;
+        margin-left: 10px;
+        text-align: center;
+        left: 300px
+    }
+    .thick {
+        position: relative;
+        border: 4px dashed red;
+        margin-left: 10px;
+        text-align: center;
+        left: 600px
+    }
+    .cum {
+        position: relative;
+        border: 4px dashed yellow;
+        margin-left: 10px;
+        text-align: center;
+        left: 900px
+    }
 }
-.hot {
-    border: 4px dashed greenyellow;
-    margin-left: 10px;
-}
-.thick {
-    border: 4px dashed red;
-    margin-left: 10px;
-}
-.cum {
-    border: 4px dashed yellow;
-    margin-left: 10px;
+@media only screen and (min-width: 650px){
+    .thick {
+        border: 10px solid yellowgreen
+    }
 }
