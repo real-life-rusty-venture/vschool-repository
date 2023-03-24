@@ -1,0 +1,29 @@
+html {
+    background-image: url(https://i.ytimg.com/vi/HyIPQXFq6J4/maxresdefault.jpg);
+    text-align: center;
+    font-size: larger;
+    opacity: 0.6;
+    background-size: 100%;
+    background-repeat: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#arcade {
+    opacity: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+#roy-div {
+    opacity: 1;
+    grid-column: 1,2;
+}
+#doom-div {
+    opacity: 1;
+    grid-column: 1,2;
+}
+#damacy-div {
+    opacity: 1;
+    grid-column: 1,2;
+}
+#tarantino {
+    opacity: 1;
+}

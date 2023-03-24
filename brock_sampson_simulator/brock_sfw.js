@@ -101,7 +101,7 @@ function Battle(randomEncounter, random) {
         break;
         case "phantom limb": phantomLimbBattleIntro()
         break;
-        case "two ton 21": garyBattleIntro()
+        case "henchmen 21": garyBattleIntro()
         break;
         case "the blue morpho": morphoBattleIntro()
         break;

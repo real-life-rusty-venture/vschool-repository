@@ -9,13 +9,13 @@ function formAlert() {
     const gender = form.elements["gender"].value;
     const location = form.elements["travel-location"].value;
     const diet = [];
-    if (form.elements['vegan'].checked) {
+    if (form.elements['vegan'].checked == true) {
         diet.push(document.getElementById("vegan").value);
     }
-    if (form.elements['gluten'].checked) {
+    if (form.elements['gluten'].checked == true) {
         diet.push(document.getElementById('gluten').value);
     }
-    if (form.elements['paleo'].checked) {
+    if (form.elements['paleo'].checked == true) {
         diet.push(document.getElementById('paleo').value);
     }
     console.log("First Name: " + firstName + "Last Name: " + lastName + "Age: " + age + "Gender: " + gender + "Travel Location: " + location + "Diet: " + diet + "Awesome, now if you die, it won't be an accident..");

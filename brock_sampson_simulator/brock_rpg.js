@@ -287,7 +287,7 @@ function run(randomEncounter) {
     let chance = Math.floor(Math.random() * (4 - 1 + 1) + 1)
     if (chance % 2 === 0) {
         console.log("you sucessfully ran away! ...for some reason")
-        console.log("you're brock god damn sampson aren't you? grow some god damn balls already!!!")
+        console.log("you're brock god damn sampson aren't you? gr1ow some god damn balls already!!!")
         console.log(`or ${name} or whatever`)
         console.log(`${randomEncounter.name}: brock sampson? running away from ME?`)
         console.log(`${randomEncounter.name}: my my my, how the turn tables!`)

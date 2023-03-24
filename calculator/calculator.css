@@ -1,0 +1,30 @@
+html {
+    background-color: pink;
+    font-family: fantasy;
+    text-align: center;
+}
+
+#calculator {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+#bitch {
+    grid-column: 1,4;
+    grid-row: 1,2;
+    color: darkolivegreen;
+}
+#addition {
+    grid-column: 1,2;
+    color: black;
+    grid-row: 3,4;
+}
+#subtraction {
+    grid-column: 2,3;
+    color: yellowgreen;
+    grid-row: 3,4;
+}
+#multiplication {
+    grid-column: 3,4;
+    color: red;
+    grid-row: 3,4;
+}
