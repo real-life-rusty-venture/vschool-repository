@@ -5,21 +5,20 @@ html {
     background-image: url(https://img.freepik.com/premium-vector/fire-flames-burning-red-hot-sparks-realistic-abstract-background_29865-1703.jpg);
     color: red;
 }
-@media only screen and (min-width: 1000px) {
-    #whorehouse {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-    #suck {
-        grid-column: 1,2;
-        grid-row: 1,2;
-    }
-    #fuck {
-        grid-column: 2,3;
-        grid-row: 1,2;
-    }
-    #cuck {
-        grid-column: 3,4;
-        grid-row: 1,2;
-    }
+
+#whorehouse {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#suck {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+#fuck {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+#cuck {
+    grid-column: 3/4;
+    grid-row: 1/2;
 }

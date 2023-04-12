@@ -150,7 +150,7 @@ html {
     #topdiv {
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: repeat(9, 1fr);
+        /* grid-template-rows: repeat(9, 1fr); */
     }
     #title {
         grid-column: 1/2;
@@ -196,19 +196,71 @@ html {
         grid-row: 8/9;
         padding-left: 50px;
         padding-right: 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .color {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    .brick {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+    .time {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+    .money {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+    .numb {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+    .wonderwall {
+        grid-column: 2/3;
+        grid-row: 4/5;
+    }
+    .sugar {
+        grid-column: 1/2;
+        grid-row: 5/6;
+    }
+    .death {
+        grid-column: 2/3;
+        grid-row: 5/6;
     }
     #promo { /*make it double up*/
         grid-column: 1/2;
         grid-row: 9/10;
         padding-left: 50px;
         padding-right: 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #view {
+        grid-column: 1/2;
+    }
+    #resources {
+        grid-column: 2/3;
+        /* grid-row: 2/2; */
+    }
+    #faq {
+        grid-column: 1/2;
+    }
+    #submit {
+        grid-column: 2/3;
+    }
+    #references {
+        grid-column: 1/2;
     }
 }
 @media only screen and (min-width: 700px) {
     #topdiv {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        /* grid-template-rows: 1fr 1fr 1fr 1fr; */
     }
     #title {
         grid-column: 1/3;

@@ -1,0 +1,42 @@
+{"homicidal menu": [
+    {"appetizers": [
+        {"name": "pile of shit",
+        "ingredience": "just shit!",
+        "description": "somebody just took a shit on the ground. and you can eat it if you want"},
+        {"name": "felipe the roach",
+        "ingredience": "it's one single roach",
+        "description": "nny keeps calling every roach he sees felipe and ranting about how he keeps coming back from the dead. and you can eat it if you want"}
+    ]},
+    {"cold sandwiches": [
+        {"name": "spoiled sardine and carpet tack sandwich",
+        "ingredience": ["spoiled sardines", "carpet tacks", "sandwich"],
+        "description": "nny is really into obscure historiccal references"},
+        {"name": "ice cold taco",
+        "ingredience": ["taco shell", "mystery greens", "mystery meat", "mystery sauce"],
+        "description": "a taco nny stuck in the freezer so it'll count as a cold sandwich. the fact that it is cold is the least disturbing thing about it"}
+    ]},
+    {"hot sandwiches": [
+        {"name": "taco",
+        "ingredience": ["taco shell", "mystery greens", "mystery meat", "mystery sauce"],
+        "description": "now that its heated up it smells like blood and hair"},
+        {"name": "toddler",
+        "ingredience": "a toddler",
+        "description": "another one of nny's beloved historical references"}
+    ]},
+    {"desserts": [
+        {"name": "cherry jollyrancher",
+        "ingredience": "cherry jollyrancher",
+        "description": "somebody just took a shit on "},
+        {"name": "wet wall",
+        "ingredience": ["1 wall", "buckets and buckets of blood painted on top of it"],
+        "description": "this one only counts as a treat if you're the beast that lives behind the mood"}
+    ]},
+    {"drinks": [
+        {"name": "cherry fizzwizz",
+        "ingredience": ["list of 400 different preservatives and artificial colorings and flavorings and sweetners"],
+        "description": "nnys all time favorite!"},
+        {"name": "the jimmy special",
+        "ingredience": "blood",
+        "description": "nny hates this one. but as long as he has enough of the stuff lying around he may as well sell it"}
+    ]}
+]}
