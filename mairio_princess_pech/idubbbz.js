@@ -26,7 +26,9 @@ class Player {
     }
     gotPoweredUp() {
         console.log("shagadelic! you got a powerup baby! (its the fire flower from the filthy frank episode)")
-        this.status += 1
+        if (this.status <= 3) {
+            this.status += 1
+        }
     }
     addCoin() {
         console.log("you just got a coin! oh, smashing, groovy, yay capitalism!")

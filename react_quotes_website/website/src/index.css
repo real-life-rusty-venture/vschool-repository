@@ -1,0 +1,92 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+.book {
+  background-image: url(https://images.prismic.io/merchbar/ed253c8164020ed6cc4a601820c2c3fce5439aa6_nirvana-logo.jpg?auto=compress,format);
+  height: 500px;
+  color: white;
+  padding-top: 10px;
+  padding-left: 150px;
+  margin-bottom: 100px;
+}
+.nav {
+  display: flex;
+  text-align: left;
+}
+.list {
+  display: flex;
+  padding-left: 575px;
+}
+.title{
+  padding-left: 260px;
+  padding-top: 75px;
+  font-size: 75px;
+}
+.subtitle {
+  padding-left: 350px;
+}
+.older {
+  height: 75px;
+  width: 200px;
+  background-color: blue;
+  color: white;
+  font-size: 25px;
+}
+.older:hover  {
+  background-color: darkblue;
+  transition: all 0.5s ease-in-out;
+}
+.posts {
+  padding-left: 800px;
+}
+.social {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  color: white;
+}
+.social:hover  {
+  background-color: blue;
+  transition: all 0.5s ease-in-out;
+}
+.media {
+  padding-left: 575px;
+}
+.copyright {
+  padding-left: 475px;
+  font-size: 30px;
+  color: gray;
+}
+.quotes {
+  padding-left: 300px;
+  padding-right: 350px;
+  font-size: larger;
+}
+.subtitleDiv {
+  display: inline;
+}
+.setup {
+  padding-top: 20px;
+}
+.titleDiv:hover {
+  color: blue;
+}
+.posted {
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+  color: gray;
+}
+.author:hover {
+  color: blue;
+}

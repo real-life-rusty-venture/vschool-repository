@@ -22,7 +22,7 @@ const enemies = [
 },
     {
         "name": "two ton 21",
-    "hp": 250,
+    "hp": 200,
     "items": ["bulletproof vest", "tranquilizer gun", "butterfly themed throwing knives", "brock's crossbow (thanks brock)"],
     "mission": "to avenge 24's death once and for all!",
     "banter": "dudeeee!!! i'm trying to avenge my best friend's death here! can you PLEASE be cool!"

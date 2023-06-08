@@ -10,7 +10,7 @@
     {"cold sandwiches": [
         {"name": "spoiled sardine and carpet tack sandwich",
         "ingredience": ["spoiled sardines", "carpet tacks", "sandwich"],
-        "description": "nny is really into obscure historiccal references"},
+        "description": "nny is really into obscure historical references"},
         {"name": "ice cold taco",
         "ingredience": ["taco shell", "mystery greens", "mystery meat", "mystery sauce"],
         "description": "a taco nny stuck in the freezer so it'll count as a cold sandwich. the fact that it is cold is the least disturbing thing about it"}
@@ -29,7 +29,7 @@
         "description": "somebody just took a shit on "},
         {"name": "wet wall",
         "ingredience": ["1 wall", "buckets and buckets of blood painted on top of it"],
-        "description": "this one only counts as a treat if you're the beast that lives behind the mood"}
+        "description": "this one only counts as a treat if you're the beast that lives behind the wall"}
     ]},
     {"drinks": [
         {"name": "cherry fizzwizz",

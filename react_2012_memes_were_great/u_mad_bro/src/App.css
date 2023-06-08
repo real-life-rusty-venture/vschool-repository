@@ -1,0 +1,39 @@
+.div {
+  display: flex;
+  background-color: purple;
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+.trollFace {
+  width: 75px;
+  padding-left: 50px;
+}
+.header2 {
+  padding-left: 900px;
+}
+.form {
+  padding-top: 50px;
+  padding-left: 30px;
+}
+.input {
+  height: 50px;
+  width: 625px;
+  margin-right: 30px;
+  font-size: larger;
+  text-indent: 20px;
+}
+.button {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: purple;
+  color: white;
+  font-size: x-large;
+  width: 1300px;
+  margin-top: 20px;
+}
+.memeImage {
+  padding-left: 400px;
+  padding-top: 60px;
+  width: 500px;
+}

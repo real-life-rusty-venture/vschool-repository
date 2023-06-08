@@ -1,0 +1,10 @@
+.terrified {
+    list-style: none;
+    display:  flex;
+}
+.ohno {
+    padding: 10px;
+}
+.tired {
+    width: 300px;
+}
