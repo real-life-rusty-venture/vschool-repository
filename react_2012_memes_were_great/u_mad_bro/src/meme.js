@@ -124,6 +124,7 @@ export default function Meme(props) {
           showIt ={showIt}
           savedMemes = {savedMemes}
           setSavedMemes = {setSavedMemes}
+          key = {meme.index}
         />)
     //finish this later
     return (
