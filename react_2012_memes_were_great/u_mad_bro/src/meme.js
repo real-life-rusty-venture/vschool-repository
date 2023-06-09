@@ -121,7 +121,7 @@ export default function Meme(props) {
           topText={meme.topText}
           bottomText={meme.bottomText}
           img={meme.img}
-          showIt ={props.showIt}
+          showIt ={showIt}
           savedMemes = {savedMemes}
           setSavedMemes = {setSavedMemes}
         />)

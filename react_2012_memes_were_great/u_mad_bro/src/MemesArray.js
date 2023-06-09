@@ -3,6 +3,7 @@ import React from "react";
 //need user to be able to add edit and delete memes from memesArray (half done)
 //need to fix styles (not done)
 export default function MemesArray(props) {
+    const [showEdit, setShowEdit] = React.useState(false)
     const [memeEdit, setMemeEdit] = React.useState({
         topText: "",
         bottomText: "",
@@ -37,7 +38,7 @@ export default function MemesArray(props) {
         //     ...prev,
         //     {topText: memeEdit.topText,
         //         bottomText: memeEdit.bottomText
-             }
+            // } this is extra
         // ]
         // ))
     }
@@ -50,7 +51,7 @@ export default function MemesArray(props) {
             //for some reason
         }
         )
-    // }
+    // }}
     // function postIt() {
     //     axios.put("http://api.imgflip.com/caption_image", {memeEdit}).then(res => setCreatedMemes(prev => {return [...prev, {
     //                       url: res.data.url,
@@ -59,30 +60,30 @@ export default function MemesArray(props) {
     //                     }]})
     //                     ) //i want to put a console.log here but i cant and i dont know why the code wont let me
     // } forget it
-    const [showEdit, setShowEdit] = React.useState(false)
-    const MemesMap = savedMemes.map(item => {
+    // const MemesMap = savedMemes.map(item => {
         console.log(props.showIt, "props lol") //what
         return props.showIt && ( //what
             <div>
-                <h2>{item.topText}</h2>
-                <h2>{item.bottomText}</h2>
-                <img src = {item.img}/>
-                <button onClick={() => edit(item.id)}>edit</button>
-                showEdit && <form onSubmit = {(e) => handleEditClick(e, item.id)}>
-                    <input name = "topText" placeholder = "top text goes here lol" onChange={(e) => handleChange(e, item.img)}/>
+                <h2>{props.topText}</h2>
+                <h2>{props.bottomText}</h2>
+                <img src = {props.img}/>
+                <button onClick={() => edit(props.id)}>edit</button>
+                showEdit && <form onSubmit = {(e) => handleEditClick(e, props.id)}>
+                    <input name = "topText" placeholder = "top text goes here lol" onChange={(e) => handleChange(e, props.img)}/>
                     <input name = "bottomText" placeholder="bottom text goes here lol" onChange={() => handleChange}/>
                     {/* <input name = "img" placeholder = "src url goes here lol"/> */}
                     <button>submitty</button>
                 </form>
-                <button onClick = {() => bleach(item.id)}>delete</button>
+                <button onClick = {() => bleach(props.id)}>delete</button>
             </div>
         )
-    })
-    return (
-        <div>
-            {MemesMap}
-        </div>
-    )
+    //}
+    //)
+    // return (
+    //     <div>
+    //         {MemesMap}
+    //     </div>
+    // )
 }
 // //http://api.imgflip.com/caption_image
 // axios.post("/http://api.imgflip.com/caption_image")
@@ -125,4 +126,4 @@ export default function MemesArray(props) {
 //           }
 //         })
 //         .catch(error => console.log('error', error));
-//       }
+       }
