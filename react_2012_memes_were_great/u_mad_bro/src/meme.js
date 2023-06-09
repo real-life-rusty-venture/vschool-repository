@@ -1,10 +1,12 @@
 import React, {useEffect} from "react"
 import data from "./data"
 import axios from "axios"
-import ShowItButton from "./ShowItButton"
+// import ShowItButton from "./ShowItButton"
 import MemesArray from "./MemesArray"
+import ShowItButton from "./ShowItButton"
 export default function Meme(props) {
     const [savedMemes, setSavedMemes] = React.useState([])
+    // const [showIt, setShowIt] = React.useState(false)
     const [meme, setMeme] = React.useState({
         "topText" : "top text",
         "bottomText" : "bottom text",
@@ -134,6 +136,7 @@ export default function Meme(props) {
             <h2>{meme.bottomText}</h2>
             <img src = {meme.img} className="memeImage"></img>
         </form>
+        <ShowItButton showIt = {showIt} setShowIt = {setShowIt}/>
         {myMemesList}
         </div>
     )
