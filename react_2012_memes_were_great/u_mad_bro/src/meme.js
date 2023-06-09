@@ -2,7 +2,9 @@ import React, {useEffect} from "react"
 import data from "./data"
 import axios from "axios"
 import ShowItButton from "./ShowItButton"
+import MemesArray from "./MemesArray"
 export default function Meme(props) {
+    const [savedMemes, setSavedMemes] = React.useState([])
     const [meme, setMeme] = React.useState({
         "topText" : "top text",
         "bottomText" : "bottom text",
@@ -82,7 +84,7 @@ export default function Meme(props) {
                 "id" : vendata[randomIndex].id
             }
         })
-        props.setSavedMemes(prev => ([
+        setSavedMemes(prev => ([
             ...prev,
             meme
         ]))
@@ -111,9 +113,20 @@ export default function Meme(props) {
         position: "absolute", 
         textAlign: "center"
     }
+    const myMemesList = savedMemes.map(meme=>
+        <MemesArray
+          id={meme.id}
+          topText={meme.topText}
+          bottomText={meme.bottomText}
+          img={meme.img}
+          showIt ={props.showIt}
+          savedMemes = {savedMemes}
+          setSavedMemes = {setSavedMemes}
+        />)
     //finish this later
     return (
-        <form className="form">
+        <div>
+            <form className="form">
             <input placeholder = "top text here lol" className="input" name = "topText" onChange={handleChange}></input>
             <input placeholder="superior chad bottom text here" className="input" name = "bottomText" onChange={handleChange}></input>
             <button type = "button" className="button" onClick={handleClick}>get yer meme</button>
@@ -121,5 +134,7 @@ export default function Meme(props) {
             <h2>{meme.bottomText}</h2>
             <img src = {meme.img} className="memeImage"></img>
         </form>
+        {myMemesList}
+        </div>
     )
 }

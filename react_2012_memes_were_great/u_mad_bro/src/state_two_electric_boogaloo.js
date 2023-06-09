@@ -5,13 +5,13 @@ import ShowItButton from "./ShowItButton";
 import MemesArray from "./MemesArray";
 export default function FinalBossComponent() {
     const [showIt, setShowIt] = React.useState(false)
-    const [savedMemes, setSavedMemes] = React.useState([])
+    // const [savedMemes, setSavedMemes] = React.useState([])
     return (
         <div>
             <Header></Header>
-            <Meme savedMemes = {savedMemes} setSavedMemes = {setSavedMemes}></Meme>
+            <Meme showIt = {showIt}/>
             <ShowItButton setShowIt = {setShowIt}/>
-            <MemesArray savedMemes = {savedMemes} setSavedMemes = {setSavedMemes} showIt = {showIt}/>
+            <MemesArray/>
         </div>
     )
 }

@@ -60,7 +60,7 @@ export default function MemesArray(props) {
     //                     ) //i want to put a console.log here but i cant and i dont know why the code wont let me
     // } forget it
     const [showEdit, setShowEdit] = React.useState(false)
-    const MemesMap = savedMemes.map(item => { //what
+    const MemesMap = savedMemes.map(item => {
         console.log(props.showIt, "props lol") //what
         return props.showIt && ( //what
             <div>
