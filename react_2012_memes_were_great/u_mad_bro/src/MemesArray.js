@@ -2,16 +2,26 @@ import React from "react";
 //need user to be able to access memesArray (done)
 //need user to be able to add edit and delete memes from memesArray (half done)
 //need to fix styles (not done)
+import EditForm from "./EditForm";
 export default function MemesArray(props) {
     const [showEdit, setShowEdit] = React.useState(false)
     const [memeEdit, setMemeEdit] = React.useState({
         topText: "",
         bottomText: "",
-        img: ""
+        img: "" || props.img
     })
     const {savedMemes, setSavedMemes} = props
     function edit() {
-        props.setShowEdit(prev => prev === false ? "true" : "false")
+        setShowEdit(prev => {
+            if (prev === false) {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+            // prev === false ? "true" : "false"
+            )
     }
     function bleach(id) {
         setSavedMemes(prev => prev.filter(item => item.id !== id))
@@ -43,14 +53,16 @@ export default function MemesArray(props) {
         // ))
     }
     function handleChange(e, url) {
-        setMemeEdit(
-            {[e.target.name] : e.target.value,
-            img: ""//i gotta figure out how to pass url into here
+        setMemeEdit(prev => (
+            {
+                ...prev,
+                [e.target.name] : e.target.value,
+            //i gotta figure out how to pass url into here
             //when i pass item.img into the handlechange it breaks
             //it makes it unable to read target
             //for some reason
         }
-        )
+        ))}
     // }}
     // function postIt() {
     //     axios.put("http://api.imgflip.com/caption_image", {memeEdit}).then(res => setCreatedMemes(prev => {return [...prev, {
@@ -62,18 +74,57 @@ export default function MemesArray(props) {
     // } forget it
     // const MemesMap = savedMemes.map(item => {
         console.log(props.showIt, "props lol") //what
+        const memeTextStyleTop = {
+            position: "absolute",
+            width: "80%",
+            textAlign: "center",
+            left: "50%",
+            transform: "translateX(-50%)",
+            margin: "15px 0",
+            padding: "0 5px",
+            fontFamily: "impact, sans-serif",
+            fontSize: "3em",
+            textTransform: "uppercase",
+            color: "white",
+            letterSpacing: "2px",
+            // color: "pink",
+            // top: "0"
+            paddingTop: "25px",
+            paddingRight: "650px",
+            position: "absolute"
+            }
+            const memeTextStyleBottom = {
+                position: "absolute",
+            width: "80%",
+            textAlign: "center",
+            left: "50%",
+            transform: "translateX(-50%)",
+            margin: "15px 0",
+            padding: "0 5px",
+            fontFamily: "impact, sans-serif",
+            fontSize: "3em",
+            textTransform: "uppercase",
+            color: "white",
+            letterSpacing: "2px",
+            // color: "pink",
+            // bottom: "0"
+            paddingTop: "450px",
+            paddingRight: "650px",
+            position: "absolute"
+            }
+            const memeImageStyle = {
+                // maxWidth: "100%",
+                borderRadius: "3px",
+                height: "550px",
+                width: "700px",
+            }
         return props.showIt && ( //what
             <div>
-                <h2>{props.topText}</h2>
-                <h2>{props.bottomText}</h2>
-                <img src = {props.img}/>
+                <h2 style = {memeTextStyleTop}>{props.topText}</h2>
+                <h2 style = {memeTextStyleBottom}>{props.bottomText}</h2>
+                <img style = {memeImageStyle} src = {props.img}/>
                 <button onClick={() => edit(props.id)}>edit</button>
-                showEdit && <form onSubmit = {(e) => handleEditClick(e, props.id)}>
-                    <input name = "topText" placeholder = "top text goes here lol" onChange={(e) => handleChange(e, props.img)}/>
-                    <input name = "bottomText" placeholder="bottom text goes here lol" onChange={() => handleChange}/>
-                    {/* <input name = "img" placeholder = "src url goes here lol"/> */}
-                    <button>submitty</button>
-                </form>
+                <EditForm showEdit = {showEdit} img = {props.img} id = {props.id} handleChange = {props.handleChange} handleEditClick = {handleEditClick}/>
                 <button onClick = {() => bleach(props.id)}>delete</button>
             </div>
         )
@@ -84,7 +135,7 @@ export default function MemesArray(props) {
     //         {MemesMap}
     //     </div>
     // )
-}
+//}
 // //http://api.imgflip.com/caption_image
 // axios.post("/http://api.imgflip.com/caption_image")
 // .then(

@@ -8,8 +8,8 @@ export default function Meme(props) {
     const [savedMemes, setSavedMemes] = React.useState([])
     // const [showIt, setShowIt] = React.useState(false)
     const [meme, setMeme] = React.useState({
-        "topText" : "top text",
-        "bottomText" : "bottom text",
+        "topText" : "",
+        "bottomText" : "",
         "img" : "",
         "id" : ""
     })
@@ -99,21 +99,60 @@ export default function Meme(props) {
             [e.target.name] : e.target.value
         }))
     }
-    const toppy = {
-        color: "black",
-        // display: "inline", 
-        // paddingLeft: "400px",
-        // paddingTop: "400px"
-        position: "absolute", 
-        textAlign: "center"
+    // const toppy = {
+    //     color: "black",
+    //     // display: "inline", 
+    //     // paddingLeft: "400px",
+    //     // paddingTop: "400px"
+    //     position: "absolute", 
+    //     textAlign: "center"
+    // }
+    // const bottom = {
+    //     color: "black", 
+    //     // display: "inline",
+    //     // paddingLeft: "400px",
+    //     // paddingTop: "600px"
+    //     position: "absolute", 
+    //     textAlign: "center"
+    // }
+    const memeTextStyleTop = {
+    position: "absolute",
+    width: "80%",
+    textAlign: "center",
+    left: "50%",
+    transform: "translateX(-50%)",
+    margin: "15px 0",
+    padding: "0 5px",
+    fontFamily: "impact, sans-serif",
+    fontSize: "3em",
+    textTransform: "uppercase",
+    color: "white",
+    letterSpacing: "2px",
+    // color: "pink",
+    // top: "0"
+    paddingTop: "75px"
     }
-    const bottom = {
-        color: "black", 
-        // display: "inline",
-        // paddingLeft: "400px",
-        // paddingTop: "600px"
-        position: "absolute", 
-        textAlign: "center"
+    const memeTextStyleBottom = {
+        position: "absolute",
+    width: "80%",
+    textAlign: "center",
+    left: "50%",
+    transform: "translateX(-50%)",
+    margin: "15px 0",
+    padding: "0 5px",
+    fontFamily: "impact, sans-serif",
+    fontSize: "3em",
+    textTransform: "uppercase",
+    color: "white",
+    letterSpacing: "2px",
+    // color: "pink",
+    // bottom: "0"
+    paddingTop: "525px"
+    }
+    const memeImageStyle = {
+        maxWidth: "100%",
+        borderRadius: "3px",
+        height: "550px"
     }
     const myMemesList = savedMemes.map(meme=>
         <MemesArray
@@ -133,9 +172,9 @@ export default function Meme(props) {
             <input placeholder = "top text here lol" className="input" name = "topText" onChange={handleChange}></input>
             <input placeholder="superior chad bottom text here" className="input" name = "bottomText" onChange={handleChange}></input>
             <button type = "button" className="button" onClick={handleClick}>get yer meme</button>
-            <h2>{meme.topText}</h2>
-            <h2>{meme.bottomText}</h2>
-            <img src = {meme.img} className="memeImage"></img>
+            <h2 style = {memeTextStyleTop}>{meme.topText}</h2>
+            <h2 style = {memeTextStyleBottom}>{meme.bottomText}</h2>
+            <img src = {meme.img} className="memeImage" style = {memeImageStyle}></img>
         </form>
         <ShowItButton showIt = {showIt} setShowIt = {setShowIt}/>
         {myMemesList}
