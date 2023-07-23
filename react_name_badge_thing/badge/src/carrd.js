@@ -16,7 +16,6 @@ export default function Carrd(props) {
         backgroundColor: "black",
         color: "white"
     }
-    //idk why but both thee styles make the card refuse to show up
     const matrix = {
         border: "1px solid black"
     }

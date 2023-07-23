@@ -1,6 +1,5 @@
 export default function ColorForm(props) {
     function handleClick(e) {
-        console.log("imma firin ma lazer!")
         e.preventDefault()
         // const mecha = Math.floor(Math.random() * 7)
         props.setData(Math.floor(Math.random() * 7))
