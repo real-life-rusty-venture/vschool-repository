@@ -1,0 +1,22 @@
+{
+  "name": "5_bounty_hunter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compass": "^0.1.1",
+    "dotenv": "^16.3.1",
+    "env": "0.0.2",
+    "express": "^4.18.2",
+    "mongoose": "^6.10.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.1",
+    "uuid": "^9.0.0"
+  }
+}

@@ -1,4 +1,4 @@
-qqimport React from "react"
+import React from "react"
 import {Routes, Route, Link} from "react-router-dom"
 import Navbar from "./Navbar"
 import Main from "./Main"
