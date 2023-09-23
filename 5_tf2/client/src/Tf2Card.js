@@ -16,10 +16,13 @@ export default function Tf2Card(props) {
     const linkStyle = {
         color : "black"
     }
+    const imageStyle = {
+        height : "400px"
+    }
     return (
         <div style = {divStyle}>
             <h3>{props.alias}</h3>
-            <img src = {props.img}/>
+            <img src = {props.img} style = {imageStyle} />
             <p>real name: {props.realName}</p>
             <p>age: {props.age}</p>
             <p>gender: {props.gender}</p>
