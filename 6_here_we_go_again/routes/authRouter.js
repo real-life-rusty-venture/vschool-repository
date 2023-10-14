@@ -42,7 +42,7 @@ authRouter.post("/signup", (req, res, next) => {
           res.status(500)
           return next(err)
         }
-        const token = jwt.sign(savedUser.toObject(), "foxtrot uniform charlie kilo")
+        const token = jwt.sign(savedUser.withoutPassword(), process.env.SECRET)
         return res.status(201).send({ token, user: savedUser.withoutPassword() })
       })
     })
@@ -86,19 +86,31 @@ authRouter.post("/login", (req, res, next) => {
             return next(new Error("username or password is wrong"))
         }
         // if (req.body.password !== user.password) {// }
+        // user.checkPassword(req.body.password, (err, isMatch) => {
+        //   if (err || !isMatch) {
+        //     res.status(403)
+        //     return next(new Error("username or password is wrong"))
+        //   }
+
+
+
         user.checkPassword(req.body.password, (err, isMatch) => {
-          if (err || !isMatch) {
+          if (err ||  !isMatch) {
             res.status(403)
             return next(new Error("username or password is wrong"))
           }
+          const token = jwt.sign(user.withoutPassword(), process.env.SECRET)
+          return res.status(200).send({token, user : user.withoutPassword()})
+        })
+
+
+
           
       
-          const token = jwt.sign(user.toObject(), process.env.SECRET)
-          return res.status(200).send({token, user : user.withoutPassword()})
         } );
     })
 
-})
+// })
 
 
 // Login

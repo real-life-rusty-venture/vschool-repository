@@ -6,8 +6,13 @@ import ContactMe from './ContactMe';
 import NavBar from './NavBar';
 import { Routes, Route } from "react-router-dom"
 function App() {
+  const divStyle = {
+    backgroundColor : "#E5E4E2",
+    color : "#1B1212",
+    font : "#36454F"
+}
   return (
-    <div>
+    <div style = {divStyle}>
       <NavBar/>
       <Routes>
         <Route path = "/" element = {<Home/>}/>

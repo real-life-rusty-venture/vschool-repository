@@ -19,11 +19,15 @@ export default function TvShow(props) {
     //_id = 
     console.log("props", props.upVote.length)
     const upVotesLength = props.upVote.length
+    const divStyle = {
+        border : "2px solid #adadc9",
+        marginLeft : "200"
+    }
     const imageStyle = {
         width : "200px"
     }
     return (
-        <div>
+        <div style={divStyle}>
             <div>
                 <h3>{props.title}</h3>
                 <img src = {props.imgUrl} style = {imageStyle}/>

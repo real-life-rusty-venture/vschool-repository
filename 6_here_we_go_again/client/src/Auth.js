@@ -5,7 +5,7 @@ export default function Auth() {
     const formData = {username: "", password: ""}
     const [inputs, setInputs] = React.useState(formData)
     const [flipper, setFlipper] = React.useState(false)
-    const { signup, login } = React.useContext(UserContext)
+    const { signup, login, errMsg, resetAuthErr } = React.useContext(UserContext)
     function handleChange(e) {
         const { name, value } = e.target
         // console.log('name', name, 'value', value)
@@ -25,6 +25,10 @@ export default function Auth() {
     function handleLogin(e){
         e.preventDefault()
         login(inputs)
+    }
+    function toggleForm() {
+        setFlipper(prev => !prev)
+        resetAuthErr()
     }
     const divStyle = {
         textAlign : "center",
@@ -46,6 +50,7 @@ export default function Auth() {
                 inputs = {inputs}
                 handleChange = {handleChange}
                 setFlipper = {setFlipper}
+                errMsg = {errMsg}
                 />
             </div>
         :
@@ -57,6 +62,7 @@ export default function Auth() {
             inputs = {inputs}
             handleChange = {handleChange}
             setFlipper = {setFlipper}
+            errMsg = {errMsg}
             />
         </div>
         }

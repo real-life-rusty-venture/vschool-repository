@@ -7,12 +7,13 @@ import Auth from "./Auth"
 import ProfilePage from "./ProfilePage"
 import PublicPage from './PublicPage';
 import NavBar from "./NavBar"
+import ProtectedRoutes from './ProtectedRoutes';
 
 function App() {
   const { token, logout } = React.useContext(UserContext)
   return (
     <div>
-    <NavBar logout = {logout}/>
+    {token && <NavBar logout = {logout}/>}
       
     <Routes>
       <Route
@@ -21,11 +22,17 @@ function App() {
       />
       <Route 
         path = "/profile"
-        element = {<ProfilePage/>}
+        element = {<ProtectedRoutes token = {token} redirectTo = "/">
+              <ProfilePage/>
+          </ProtectedRoutes>
+        }
         />
         <Route 
         path = "/public"
-        element = {<PublicPage/>}
+        element = {<ProtectedRoutes token =  {token} redirectTo = "/">
+            <PublicPage/>
+          </ProtectedRoutes>
+        }
         />
       </Routes>
   </div>

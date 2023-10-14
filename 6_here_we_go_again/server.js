@@ -65,10 +65,11 @@ server.use((err, req, res, next) => {
   console.log(err)
   if (err.name === "UnauthorizedError") {
     res.status(err.status)
+    console.log("err.message", err.message)
     return res.send({ errMsg: err.message })
   }
   res.status(500) // Handle other errors as 500 Internal Server Errors
-  return res.send({ errMsg: "Internal Server Error" })
+  return res.send({ errMsg: err.message })
 })
 
 

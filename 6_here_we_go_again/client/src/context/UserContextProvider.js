@@ -16,7 +16,8 @@ function UserContextProvider(props){
   const initState = { 
     user: JSON.parse(localStorage.getItem("user")) || {}, 
     token: localStorage.getItem("token") || "", 
-    show: [] 
+    show: [],
+    errMsg : ""
   }
   
   const [allShows, setAllShows] = React.useState([])
@@ -46,7 +47,7 @@ const [allComments, setAllComments] = React.useState([])
           token
         }))
       })
-      .catch(err => console.log(err))
+      .catch(err => handleAuthErr(err.response.data.errMsg))
   }
 
   function login(credentials){
@@ -65,7 +66,7 @@ const [allComments, setAllComments] = React.useState([])
           token
         }))
       })
-      .catch(err => console.log(err))
+      .catch(err => handleAuthErr(err.response.data.errMsg))
   }
 
   function logout(){
@@ -78,6 +79,22 @@ const [allComments, setAllComments] = React.useState([])
       show: []
     })
   }
+
+
+  function handleAuthErr(errMsg) {
+    setUserState(prev => ({
+      ...prev, 
+      errMsg
+    }))
+  }
+
+  function resetAuthErr() {
+    setUserState(prev => ({
+      ...prev,
+      errMsg : ""
+    }))
+  }
+
 
   function getUserShows(){
     userAxios.get("/api/tv/user")
@@ -229,6 +246,8 @@ function getComments() {
         signup,
         login,
         logout,
+        handleAuthErr,
+        resetAuthErr,
         addShow,
         getUserShows,
         getAllShows,

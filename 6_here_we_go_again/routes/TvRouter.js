@@ -119,7 +119,8 @@ tvRouter.put("/:id" , (req, res, next) => {
 
 //like this thang
 tvRouter.put("/like/:_id", (req, res, next) => {
-    Tv.findById(req.params._id, (err, show) => {
+    Tv.findById({_id : req.params._id}, (err, show) => {
+        console.log(show)
         if (err) {
             console.log(err)
             return res.status(500).send(err)
@@ -153,14 +154,57 @@ tvRouter.put("/like/:_id", (req, res, next) => {
 
     })
 })
-//this works in postman but not  at all in the front end
 
 
-// tvRouter.post("/comment/:_id", (req, res, next) => {
-//     Tv.comments.create(req.body)
-//     .then(comment => tvRouter.comments.update({ _id: req.params.id }, { $push: {comment: comment._id }}))
-//     .catch(err => console.log(err))
-// }) 
+
+
+
+//downvote thing??
+tvRouter.put("dislike/:_id", (req, res, next) => {
+    Tv.findById({_id : req.params._id}, (err, show) => {
+        if (err) {
+            console.log(err)
+            return res.status(500)
+        }
+        if (show.downVote.includes(req.auth.id)) {
+            const downVotesArray = show.downVote.filter(id => id.toString() !== req.auth._id)
+            show.downVote = downVotesArray
+            show.save((err, savedShow) => {
+                if (err) {
+                    console.log(err)
+                    res.status(500)
+                    return next(err)
+                }
+                return res.status(200).send(savedShow)
+            })
+            return
+        }
+        show.downVote.push(req.auth._id)
+
+        const downVotesArray = show.upVote.filter(id => id.toString() !== req.auth._id)
+        show.upVote = downVotesArray
+        show.save((err, savedShow) => {
+            if (err) {
+                console.log(err)
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(savedShow)
+        })
+
+    })
+})
+
+
+
+// this works in postman but not  at all in the front end
+
+
+tvRouter.post("/comment/:_id", (req, res, next) => {
+    Tv.comments.create(req.body)
+    .then(comment => tvRouter.comments.update({ _id: req.params.id }, { $push: {comment: comment._id }}))
+    .catch(err => console.log(err))
+}) 
 
 
 
