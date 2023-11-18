@@ -91,10 +91,11 @@ catRouter.put("/:id", (req, res, next) => {
 
 
 
+// catRouter.delete("/:id", (req, res, next) => {
+//     Cat.findOneAndDelete({id : req.params._id, user : req.auth._id}, (err, deletedCat) => {
 
-
-catRouter.delete("/:id", (req, res, next) => {
-    Cat.findOneAndDelete({id : req.params._id, user : req.auth._id}, (err, deletedCat) => {
+catRouter.delete("/:catId", (req, res, next) => {
+    Cat.findOneAndDelete({_id : req.params.catId, user : req.auth._id}, (err, deletedCat) => {
         if (err) {
             res.status(500)
             return next(err)

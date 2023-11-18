@@ -6,6 +6,8 @@ export default function Auth() {
     const [inputs, setInputs] = React.useState(formData)
     const [flipper, setFlipper] = React.useState(false)
     const { signup, login, errMsg, resetAuthErr } = React.useContext(UserContext)
+
+    
     function handleChange(e) {
         const { name, value } = e.target
         // console.log('name', name, 'value', value)

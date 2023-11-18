@@ -53,6 +53,7 @@ authRouter.post("/signup", async(req, res) => {
         const foundUser = await User.findOne({username : req.body.username})
         if (foundUser) {
             const err = "username already exists"
+            console.log("something")
             throw err
         }
         else if (!foundUser) {

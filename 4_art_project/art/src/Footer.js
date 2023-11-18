@@ -10,6 +10,11 @@ export default function Footer() {
     }
     const [divState, setDivState] = React.useState(divStyle)
     const mediaQuery = window.matchMedia('(max-width: 600px)')
+
+
+    
+
+
       function queryMatcher() {
         if (mediaQuery.matches) {
             const smallDivStyle = {
